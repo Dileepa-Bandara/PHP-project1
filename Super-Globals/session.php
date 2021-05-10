@@ -15,7 +15,7 @@
     <?php
 
     $_SESSION["Name"] = "Dileepa Lakmina Bandara";
-    $Name =  $_SESSION["Name"];
+    $Name = "Lakmina";
 
     ?>
 </body>

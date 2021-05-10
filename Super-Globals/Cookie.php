@@ -28,9 +28,9 @@
 
 
     echo "GLOBAL SESSION  Value created in session file </br>";
-    include "./session.php";
+include "./session.php";
     echo $_SESSION["Name"];
-    echo $name; //we cant import locsl variable as same as the SESSION global variable to one file to another file
+    //echo $Name; //we cant import locsl variable as same as the SESSION global variable to one file to another file
     ?>
 </body>
 
