@@ -51,6 +51,52 @@ if (isset($_POST["submit"])) {
         </form>
       </fieldset>
     </div>
+    <div class="table">
+      <table>
+        <caption>
+          Read Database
+        </caption>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Password</th>
+        </tr>
+        <?php
+
+        $querry1 = "SELECT * FROM signup";
+        $result1 = mysqli_query($conn, $querry1);
+        $userList = "";
+
+
+        if ($result1) {
+          while ($user = mysqli_fetch_assoc($result1)) {
+            $id = $user["id"];
+            $name = $user["name"];
+            $email = $user["email"];
+            $password = $user["password"];
+
+            $userList .= "<tr> <td>{$user["id"]} </td>
+          <td>{$user["name"]}</td>
+          <td>{$user["email"]}</td>
+          <td> {$user["password"]}</td>
+          <td> <a href = './delete.php?ID={$user["id"]}'>DELETE</a></td> 
+          <td> <a href = './update.php?ID={$user["id"]}'>EDIT</a> </td> 
+
+          </tr>";
+          }
+        }
+
+
+
+
+
+
+        ?>
+        <?php echo $userList   ?>
+
+        <?php echo  "</table>" ?>
+    </div>
   </div>
 </body>
 
